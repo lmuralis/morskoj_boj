@@ -17,7 +17,11 @@ while True:
     # ход игрока
     print('Твой ход!')
     guess_x = int(input('Угадай строку (0-5): '))
+    while guess_x > 5:
+        guess_x = int(input('За границами моря! Угадай строку (0-5): '))
     guess_y = int(input('Угадай столбец (0-5): '))
+    while guess_y > 5:
+        guess_y = int(input('За границами моря! Угадай столбец (0-5): '))
     if (guess_x, guess_y) in ship_coords:
         print('Попал!')
         board[guess_x][guess_y] = 'X'
